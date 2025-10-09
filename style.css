@@ -1,43 +1,56 @@
-/* 1. Сброс стилей и базовые настройки */
+/* 1. Сброс и базовые настройки */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Чуть более современный шрифт */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7; /* Светло-серый фон для контраста */
-    color: #333; 
+    background-color: #f7f7f7;
+    color: #333;
     line-height: 1.6;
 }
 
-/* 2. HEADER и навигация */
+/* 2. HEADER */
 header {
     text-align: center;
-    padding: 50px 20px;
-    background-color: #ffffff; /* Белый фон шапки */
-    border-bottom: 2px solid #ddd; 
+    padding: 40px 20px 30px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #ddd;
 }
 
-header h1 {
-    font-size: 2.8em;
-    margin-bottom: 5px;
-    color: #007bff; /* Акцентный цвет на имени */
+.portfolio-title {
+    font-size: 3.2em;
+    margin: 0;
+    color: #007bff;
+    letter-spacing: 1px;
+}
+
+.name {
+    font-size: 2em;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
 }
 
 header nav a {
     text-decoration: none;
-    color: #555; 
+    color: #555;
     margin: 0 15px;
     font-weight: 500;
     transition: color 0.3s;
 }
 header nav a:hover {
-    color: #007bff; /* Акцентный цвет при наведении */
+    color: #007bff;
 }
 
-/* 3. ОБЩИЕ СЕКЦИИ */
+/* 3. СЕКЦИИ */
 .section {
-    padding: 80px 5%; /* Увеличенное вертикальное пространство */
-    max-width: 1100px;
-    margin: 0 auto; 
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .section h2 {
@@ -47,44 +60,78 @@ header nav a:hover {
     color: #333;
 }
 
-/* 4. СЕТКА ПРОЕКТОВ (Увеличенные карточки) */
+/* 4. СЕТКА ПРОЕКТОВ */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px; 
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    justify-items: center;
 }
 
 .project-card {
+    width: 100%;
+    max-width: 520px;
     background-color: #ffffff;
     border: 1px solid #ddd;
-    padding: 30px; /* Увеличиваем внутренний отступ для "побольше" */
-    text-align: center;
-    border-radius: 8px; /* Слегка закругленные углы */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     transition: box-shadow 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
-    transform: translateY(-5px); /* Легкий эффект поднятия */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
 }
 
 .project-card img {
     width: 100%;
     height: auto;
-    max-height: 220px;
+    max-height: 240px;
     object-fit: cover;
     margin-bottom: 20px;
     border-radius: 4px;
+    flex-shrink: 0;
 }
 
-/* 5. Кнопки (Базовый стиль для всех кнопок) */
+.project-card h3 {
+    margin: 0 0 12px;
+    font-size: 1.4em;
+    line-height: 1.3;
+}
+
+.project-card p {
+    margin: 0 0 15px;
+    line-height: 1.5;
+}
+
+.features-list {
+    margin: 0 0 20px;
+    padding-left: 20px;
+    font-size: 0.95em;
+    color: #444;
+    flex-grow: 1;
+}
+
+.features-list li {
+    margin-bottom: 6px;
+}
+
+.project-centered {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+/* 5. КНОПКИ */
 .btn-group {
-    margin-top: 20px;
+    margin-top: auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px; /* Расстояние между кнопками */
+    gap: 10px;
 }
 
 .btn {
@@ -95,62 +142,139 @@ header nav a:hover {
     border-radius: 5px;
     transition: background-color 0.3s, opacity 0.3s;
     font-size: 0.9em;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
 }
 
-/* Стиль для основной (синей) кнопки */
 .btn-primary {
-    color: #ffffff;
-    background-color: #007bff; 
+    color: #fff;
+    background-color: #007bff;
 }
-
 .btn-primary:hover {
     background-color: #0056b3;
 }
 
-/* Стиль для вторичной (белой/контурной) кнопки */
 .btn-secondary {
     color: #007bff;
-    background-color: #ffffff;
+    background-color: #fff;
     border: 2px solid #007bff;
 }
-
 .btn-secondary:hover {
-    background-color: #f0f0f0;
-    opacity: 0.9;
+    background-color: #f8f9fa;
 }
 
+/* 6. ГАЛЕРЕЯ ПОД КАРТОЧКОЙ */
+.gallery-thumbnails {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    grid-auto-rows: minmax(100px, auto);
+}
 
-/* 6. ГРАМОТЫ */
+.thumbnail {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+.thumbnail:hover {
+    border-color: #007bff;
+}
+
+/* 7. СЕРТИФИКАТЫ */
 .awards-list {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     gap: 40px;
 }
 
 .award-item {
-    max-width: 280px;
+    max-width: 320px;
     text-align: center;
+    cursor: pointer;
 }
 
 .award-item img {
     width: 100%;
     height: auto;
-    max-height: 200px;
-    object-fit: contain; 
+    max-height: 220px;
+    object-fit: contain;
     border: 1px solid #eee;
     margin-bottom: 10px;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 10px;
     border-radius: 4px;
 }
 
-/* 7. FOOTER */
+/* 8. FOOTER */
 footer {
     text-align: center;
     padding: 30px;
     border-top: 1px solid #ddd;
     font-size: 0.9em;
     color: #777;
-    background-color: #ffffff;
+    background-color: #fff;
 }
+
+/* 9. МОДАЛЬНОЕ ОКНО */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+.close:hover {
+    color: #ccc;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    font-size: 24px;
+    width: 50px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background 0.3s;
+}
+.nav-btn:hover {
+    background: rgba(255,255,255,0.4);
+}
+.prev { left: 20px; }
+.next { right: 20px; }
