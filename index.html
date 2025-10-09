@@ -3,85 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Имя Фамилия | Портфолио</title>
-    <link rel="stylesheet" href="style.css"> 
+    <title>Шамуратов Булат | Портфолио</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>ИМЯ ФАМИЛИЯ</h1>
-        <p>Ваша Специализация: UI/UX Дизайнер, Разработчик и т.д.</p>
+        <h1 class="portfolio-title">ПОРТФОЛИО</h1>
+        <h2 class="name">Шамуратов Булат</h2>
+        <p class="subtitle">Студент 3 курса НИЯУ МИФИ</p>
         <nav>
             <a href="#projects">Проекты</a>
-            <a href="#awards">Грамоты</a>
+            <a href="#awards">Сертификаты</a>
             <a href="#contact">Контакты</a>
         </nav>
     </header>
 
     <main>
         <section id="projects" class="section">
-            <h2>Избранные проекты</h2>
+            <h2>Проекты</h2>
             <div class="project-grid">
-                
-                <article class="project-card">
-                    <img src="images/project1.jpg" alt="Обложка проекта 1">
-                    <h3>Название Проекта 1</h3>
-                    <p>Роль: Ведущий дизайнер. Задача: Увеличить конверсию на 15%.</p>
+                <!-- Проект 1 -->
+                <article class="project-card project-wide" data-gallery="project1">
+                    <img src="images/project1.jpg" alt="Крупноформатный лазерный гравер">
+                    <h3>Крупноформатный лазерный гравер</h3>
+                    <p><strong>(Статус: завершён)</strong><br>
+                    Создан крупноформатный лазерный гравер «с нуля». Проект охватывал разработку механики, интеграцию системы управления и реализацию функциональности гравировки и резки.</p>
+                    <ul class="features-list">
+                        <li><strong>CAD:</strong> КОМПАС-3D</li>
+                        <li><strong>ПО:</strong> LightBurn, LaserGRBL</li>
+                        <li><strong>Электроника:</strong> Laser Module 10W 455nm, MKS DLC 32, Nema 17, A4988</li>
+                        <li><strong>Производство:</strong> 3D-печать, механические компоненты</li>
+                    </ul>
                     <div class="btn-group">
-                        <a href="ссылка_на_галерею" target="_blank" class="btn btn-primary">Галерея</a>
-                        <a href="ссылка_на_статью" target="_blank" class="btn btn-secondary">Статья</a>
+                        <button class="btn btn-primary toggle-gallery">Галерея</button>
+                        <a href="https://habr.com/ru/articles/907868/" target="_blank" class="btn btn-secondary">Статья (Хабр)</a>
                     </div>
+                    <div class="gallery-thumbnails" data-target="project1"></div>
                 </article>
 
-                <article class="project-card">
-                    <img src="images/project2.jpg" alt="Обложка проекта 2">
-                    <h3>Название Проекта 2</h3>
-                    <p>Роль: Фронтенд-разработчик. Стек: React/Node.</p>
+                <!-- Проект 3 -->
+                <article class="project-card project-wide" data-gallery="project3">
+                    <img src="images/project3.jpg" alt="Механизм поворота">
+                    <h3>Механизм поворота (зачётное задание)</h3>
+                    <p><strong>(Статус: завершён)</strong><br>
+                    Выполнен реверс-инжиниринг механизма поворота по сборочному чертежу советского образца. Разработана сборка из 15 деталей и оформлен частичный комплект КД с указанием допусков и посадок.</p>
+                    <ul class="features-list">
+                        <li>Проектирование и моделирование сборки в КОМПАС-3D</li>
+                        <li>Разработка чертежей по <strong>ЕСКД</strong> с указанием допусков и посадок</li>
+                        <li>Использование справочной литературы: Анурьев, Анухин, Курмаз</li>
+                    </ul>
                     <div class="btn-group">
-                        <a href="ссылка_на_галерею" target="_blank" class="btn btn-primary">Галерея</a>
-                        <a href="путь/к/вашему/документу.pdf" target="_blank" class="btn btn-secondary">КД (PDF)</a>
+                        <button class="btn btn-primary toggle-gallery">Галерея</button>
+                        <button class="btn btn-secondary" onclick="openSingleImage('images/drawings/mechanism-drawing.jpg')">Исходный чертёж</button>
+                        <a href="images/documents/mechanism-kd.pdf" download class="btn btn-secondary">КД (PDF)</a>
                     </div>
+                    <div class="gallery-thumbnails" data-target="project3"></div>
                 </article>
 
-                <article class="project-card">
-                    <img src="images/project3.jpg" alt="Обложка проекта 3">
-                    <h3>Название Проекта 3</h3>
-                    <p>Роль: Копирайтер. Задача: Оптимизация текста для SEO.</p>
+                <!-- Проект 2 -->
+                <article class="project-card project-centered" data-gallery="project2">
+                    <img src="images/project2.jpg" alt="Робот-погрузчик">
+                    <h3>Робот-погрузчик</h3>
+                    <p><strong>(Статус: завершён)</strong><br>
+                    В рамках инженерных игр разработан миниатюрный робот-погрузчик, способный распознавать цвет грузов, выполнять захват, транспортировку и подъём на заданную высоту.</p>
+                    <ul class="features-list">
+                        <li><strong>CAD:</strong> КОМПАС-3D</li>
+                        <li><strong>ПО:</strong> MicroPython, VS Code, Arduino IDE</li>
+                        <li><strong>Электроника:</strong> ESP32, RGB-датчик цвета, сервоприводы MG90S</li>
+                        <li><strong>Производство:</strong> 3D-печать</li>
+                    </ul>
                     <div class="btn-group">
-                        <a href="ссылка_на_галерею" target="_blank" class="btn btn-primary">Галерея</a>
+                        <button class="btn btn-primary toggle-gallery">Галерея</button>
                     </div>
+                    <div class="gallery-thumbnails" data-target="project2"></div>
                 </article>
-
             </div>
         </section>
         
         <section id="awards" class="section">
-            <h2>Достижения и Сертификаты</h2>
+            <h2>Сертификаты</h2>
             <div class="awards-list">
-                <div class="award-item">
-                    <img src="images/award1.png" alt="Сертификат с курса X">
-                    <p>Сертификат **"Курс по Figma"** (2024)</p>
+                <div class="award-item" onclick="openSingleImage('images/certificates/qualification.jpg')">
+                    <img src="images/certificates/qualification.jpg" alt="Квалификация оформителя технической документации">
+                    <p>Квалификация «оформитель технической документации»</p>
                 </div>
-                <div class="award-item">
-                    <img src="images/award2.png" alt="Грамота с олимпиады">
-                    <p>Грамота за 1 место в **IT-Олимпиаде** (2023)</p>
+                <div class="award-item" onclick="openSingleImage('images/certificates/olympiad-math.jpg')">
+                    <img src="images/certificates/olympiad-math.jpg" alt="Грамота по математике">
+                    <p>Грамота за призовое место в олимпиаде ФКН по математике</p>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="section">
             <h2>Свяжитесь со мной</h2>
-            <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/..." target="_blank">linkedin.com/in/...</a></p>
-            <p>GitHub: <a href="https://github.com/..." target="_blank">github.com/...</a></p>
-            <a href="mailto:your@email.com" class="btn btn-primary">Написать мне</a>
+            <p>Email: <a href="mailto:bulatsteel2005@gmail.com">bulatsteel2005@gmail.com</a></p>
+            <p>Telegram: <a href="https://t.me/bu_atino" target="_blank">@bu_atino</a></p>
+            <p>Телефон: +7 (987) 143-68-88</p>
         </section>
 
     </main>
 
+    <!-- Модальное окно для увеличенных фото -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <button id="modal-prev" class="nav-btn prev">&#10094;</button>
+        <button id="modal-next" class="nav-btn next">&#10095;</button>
+        <img id="modal-img" src="" alt="Изображение">
+    </div>
+
     <footer>
-        <p>&copy; 2024 Имя Фамилия. Все права защищены.</p>
+        <p>&copy; 2025 Шамуратов Булат. Все права защищены.</p>
     </footer>
 
+    <script>
+        // Загрузка миниатюр галереи в сетку 3 в строку
+        async function loadThumbnails(projectKey, container) {
+            container.innerHTML = '';
+            for (let i = 1; i <= 20; i++) {
+                const url = `images/gallery/${projectKey}/${i}.jpg`;
+                try {
+                    const response = await fetch(url, { method: 'HEAD' });
+                    if (!response.ok) break;
+                    const img = document.createElement('img');
+                    img.src = url;
+                    img.alt = `Фото ${i}`;
+                    img.classList.add('thumbnail');
+                    img.onclick = () => openModalGallery(projectKey, i - 1);
+                    container.appendChild(img);
+                } catch { break; }
+            }
+        }
+
+        // Открытие модального окна с галереей
+        let currentGallery = [];
+        let currentModalIndex = 0;
+
+        async function openModalGallery(projectKey, startIndex) {
+            currentGallery = [];
+            for (let i = 1; i <= 20; i++) {
+                const url = `images/gallery/${projectKey}/${i}.jpg`;
+                try {
+                    const res = await fetch(url, { method: 'HEAD' });
+                    if (res.ok) currentGallery.push(url);
+                    else break;
+                } catch { break; }
+            }
+            if (currentGallery.length === 0) return;
+            currentModalIndex = Math.min(startIndex, currentGallery.length - 1);
+            document.getElementById('modal-img').src = currentGallery[currentModalIndex];
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        // Навигация в модальном окне
+        document.getElementById('modal-prev').onclick = () => {
+            if (currentGallery.length === 0) return;
+            currentModalIndex = (currentModalIndex - 1 + currentGallery.length) % currentGallery.length;
+            document.getElementById('modal-img').src = currentGallery[currentModalIndex];
+        };
+
+        document.getElementById('modal-next').onclick = () => {
+            if (currentGallery.length === 0) return;
+            currentModalIndex = (currentModalIndex + 1) % currentGallery.length;
+            document.getElementById('modal-img').src = currentGallery[currentModalIndex];
+        };
+
+        // Открытие одиночного изображения (чертёж / сертификат)
+        function openSingleImage(src) {
+            document.getElementById('modal-img').src = src;
+            currentGallery = [src];
+            currentModalIndex = 0;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        // Закрытие модального окна
+        document.querySelector('.close').onclick = () => {
+            document.getElementById('modal').style.display = 'none';
+        };
+
+        window.onclick = (e) => {
+            if (e.target.id === 'modal') {
+                document.getElementById('modal').style.display = 'none';
+            }
+        };
+
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('modal').style.display === 'flex') {
+                if (e.key === 'Escape') document.getElementById('modal').style.display = 'none';
+                else if (e.key === 'ArrowLeft') document.getElementById('modal-prev').click();
+                else if (e.key === 'ArrowRight') document.getElementById('modal-next').click();
+            }
+        });
+
+        // Переключение галереи под карточкой
+        document.querySelectorAll('.toggle-gallery').forEach(btn => {
+            btn.addEventListener('click', async function() {
+                const card = this.closest('.project-card');
+                const projectKey = card.dataset.gallery;
+                const thumbnails = card.querySelector('.gallery-thumbnails');
+                if (thumbnails.innerHTML === '') {
+                    await loadThumbnails(projectKey, thumbnails);
+                }
+                thumbnails.style.display = thumbnails.style.display === 'grid' ? 'none' : 'grid';
+            });
+        });
+    </script>
 </body>
 </html>
