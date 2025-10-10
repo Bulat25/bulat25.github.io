@@ -278,3 +278,68 @@ footer {
 }
 .prev { left: 20px; }
 .next { right: 20px; }
+
+/* Убедимся, что паддинги/ширины считаются корректно */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* --- Адаптив для карточек проектов --- */
+@media (max-width: 900px) {
+  .project-grid {
+    /* одна колонка на планшетах/телефоне */
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .project-card {
+    max-width: none;   /* чтобы занимала всю доступную ширину */
+    width: 100%;
+    padding: 22px;
+  }
+
+  /* .project-centered до этого растягивалась через grid-column: 1 / -1;
+     на малых экранах это не нужно — вернём нормальное поведение */
+  .project-centered {
+    grid-column: auto;
+    justify-self: stretch;
+  }
+
+  /* миниатюры под карточкой — чтобы не получались слишком маленькими */
+  .gallery-thumbnails {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .thumbnail {
+    height: 90px;
+  }
+}
+
+/* Для очень узких экранов (мобильные телефоны) — чуть более компактно */
+@media (max-width: 420px) {
+  .section {
+    padding: 48px 4%;
+  }
+
+  .portfolio-title {
+    font-size: 2.2em;
+  }
+
+  .name {
+    font-size: 1.4em;
+  }
+
+  .project-card {
+    padding: 16px;
+  }
+
+  .gallery-thumbnails {
+    grid-template-columns: repeat(2, 1fr); /* 2 в ряд на очень узких экранах */
+  }
+
+  .thumbnail { height: 72px; }
+}
